@@ -4,9 +4,8 @@ services:
   nginx:
     build: .
     labels:
-      - traefik.http.routers.my-container.rule=PathPrefix(`/cgawron`)
-      - traefik.http.middlewares.my-stripprefix.stripprefix.prefixes=/cgawron
-      - traefik.http.routers.my-container.middlewares=my-stripprefix
+      - traefik.http.routers.ki-site.rule=Host(`www.ki.fh-swf.de`)
+
     networks:
       - traefik_default
 
