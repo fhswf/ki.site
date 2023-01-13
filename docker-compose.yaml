@@ -1,0 +1,15 @@
+version: "3.3"
+
+services:
+  nginx:
+    build: .
+    labels:
+      - traefik.http.routers.my-container.rule=PathPrefix(`/cgawron`)
+      - traefik.http.middlewares.my-stripprefix.stripprefix.prefixes=/cgawron
+      - traefik.http.routers.my-container.middlewares=my-stripprefix
+    networks:
+      - traefik_default
+
+networks:
+  traefik_default:
+    external: true
