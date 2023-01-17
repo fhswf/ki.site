@@ -1,10 +1,13 @@
 version: "3.3"
 
 services:
+
   nginx:
     build: .
     labels:
       - traefik.http.routers.ki-site.rule=Host(`www.ki.fh-swf.de`)
+      - traefik.http.routers.ki-site-tls.rule=Host(`www.ki.fh-swf.de`)
+      - traefik.http.routers.ki-site-tls.tls=true
 
     networks:
       - traefik_default
