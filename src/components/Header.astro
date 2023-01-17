@@ -13,6 +13,7 @@
             </li>
             <li><a href="/">Home</a></li>
             <li>Dashboard</li>
+            <li><a href="https://jupiter.fh-swf.de/newhub">JupyterLab</a></li>
             <li><a href="/impressum">Impressum</a></li>
         </ul>
     </nav>
@@ -40,8 +41,18 @@
         height: 100%;
         gap: 5ex;
         list-style-type: none;
-
         padding: 10px;
         overflow: hidden;
+    }
+
+    a {
+        text-decoration: none;
+        border-bottom: 2px solid transparent;
+    }
+
+    a:hover {
+        text-decoration: none;
+        border-bottom: 3px solid hsl(37, 100%, 50%);
+        padding-bottom: 1px;
     }
 </style>
