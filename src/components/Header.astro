@@ -4,7 +4,13 @@
 <header>
     <nav>
         <ul>
-            <li><a href="https://fh-swf.de">FH Südwestfalen</a></li>
+            <li>
+                <a href="https://fh-swf.de"
+                    ><img
+                        src="https://jupiter.fh-swf.de/assets/icons/fh-swf.svg"
+                    /></a
+                >
+            </li>
             <li><a href="/">Home</a></li>
             <li>Dashboard</li>
             <li><a href="/impressum">Impressum</a></li>
@@ -13,11 +19,28 @@
 </header>
 
 <style>
+    header {
+        background-color: hsl(0, 0%, 100%);
+        color: black;
+        padding: 20px;
+        margin: 0;
+        text-align: center;
+        font-weight: 600;
+        font-size: 1.1rem;
+        margin-bottom: 1rem;
+    }
+
+    img {
+        height: 40px;
+    }
+
     ul {
         display: flex;
-        gap: 20px;
+        align-items: center;
+        height: 100%;
+        gap: 5ex;
         list-style-type: none;
-        margin-bottom: 1rem;
+
         padding: 10px;
         overflow: hidden;
     }
