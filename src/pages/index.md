@@ -5,7 +5,7 @@ title: KI-Cluster der FH Südwestfalen
 # KI und  Data Science an der FH Südwestfalen 
 
 Willkommen auf dem Cluster für KI und Data Science der FH Südwestfalen.
-Der Cluster befindet sich aktuell noch im Aufbau. Derzeit kann bereits ein JupyterLab mit GPU-Unterstützung genutzt werden.
+Der Cluster befindet sich aktuell noch im Aufbau. Derzeit kann ein JupyterLab – wahlweise mit GPU-Unterstützung – genutzt werden.
 
 
 ## Anmeldung (im *Testbetrieb*)
