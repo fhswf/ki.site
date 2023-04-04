@@ -24,6 +24,6 @@ Die hier bereitgestellte Infrastruktur und die dazugehörigen Anwendungen sind a
 
 ## Datenschutzhinweise
 
-Die Webseite [ki.fh-swf.de](https://www.ki.fh-swf.de) verarbeitet keine personenbezogene Daten. In den Logdateien des Servers wird Ihre IP-Adresse nur in anonymisierter Form (ohne das letzte Byte) gespeichert. Die Seiten selbst verwenden keine Cookies.
+Die Webseite [ki.fh-swf.de](https://www.ki.fh-swf.de) verarbeitet keine personenbezogene Daten. In den Logdateien des Servers wird Ihre IP-Adresse nur in anonymisierter Form (ohne das letzte Byte) gespeichert. Die Seiten selbst verwenden ausschließlich aus technischen Gründen notwendige Session-Cookies, die nicht an Dritte weitergegeben werden.
 
 Teilweise verwenden die Anwendungen Komponenten, die auf Content-Deliver-Networks wie Cloudflare gehostet werden, und/oder Webdienste von Drittanbietern wie Mapbox. Bei der Verwendung der Anwendungen greift Ihr Browser auf diese Komponenten und Dienste zu, wodurch Ihre IP-Adresse und ggf. auch sogenannte Cookies an die jeweiligen Anbieter übertragen werden. Sollten Sie damit nicht einverstanden sein, sollten Sie die Anwendungen nicht nutzen.
