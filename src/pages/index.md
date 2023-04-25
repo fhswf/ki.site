@@ -2,7 +2,7 @@
 layout: ../layouts/Layout.astro
 title: KI-Cluster der FH Südwestfalen
 ---
-# KI und  Data Science an der FH Südwestfalen 
+# Cluster für KI und  Data Science der Fachhochschule Südwestfalen 
 
 Willkommen auf dem Cluster für KI und Data Science der FH Südwestfalen.
 Der Cluster befindet sich aktuell noch im Aufbau. Derzeit kann ein JupyterLab – wahlweise mit GPU-Unterstützung – genutzt werden.
@@ -10,14 +10,14 @@ Der Cluster befindet sich aktuell noch im Aufbau. Derzeit kann ein JupyterLab �
 
 ## Anmeldung (im *Testbetrieb*)
 
-Die Anmeldung erfolgt über das [JupyterHub](https://www.ki.fh-swf.de/jupyterhub). Hier können Sie sich mit Ihren Hochschulzugangsdaten anmelden und einen JupyterLab-Server starten.
+Die Anmeldung erfolgt über das [JupyterLab](https://www.ki.fh-swf.de/jupyterhub). Hier können Sie sich mit Ihren Hochschulzugangsdaten anmelden und einen JupyterLab-Server starten.
 
 Eine Integration mit Moodle (= die Studierenden können direkt aus Moodle heraus ein JupyterLab starten) ist in Arbeit.
 
 ## Infrastruktur
 
 Der Cluster bietet aktuell folgende Infrastruktur:
-- 2 GPU-Server mit je 4 GPUs (NVIDIA A100)
+- 2 GPU-Server mit je 4 GPUs (NVIDIA A100 SMX, 80GB HBM2)
 - 4 CPU-Server mit je zwei AMD EPYC 7532 Prozessoren (32 Kerne, 64 Threads)
 - Hot Storage (24 x 3,84 TB NVMe SSDs)
 - Cold Storage (36 x 16 TB HDDs)
