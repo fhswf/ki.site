@@ -15,7 +15,7 @@ import Header from "../components/Header.astro";
     </head>
     <body>
         <Header />
-        <main class="prose max-w-none">
+        <main class="prose max-w">
             <slot />
         </main>
     </body>
@@ -26,8 +26,8 @@ import Header from "../components/Header.astro";
         margin: 0;
     }
 
-    main {
-        max-width: 800px;
+    main.prose {
+        max-width: 100ch;
         margin-top: 2rem;
         margin-left: auto;
         margin-right: auto;
