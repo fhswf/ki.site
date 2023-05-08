@@ -15,10 +15,17 @@ nav a:hover {
 	padding-bottom: 1px;
 }
 
+span.cluster_state {
+	display: inline-flex;
+	vertical-align: middle;
+}
+
 .cluster_state {
-	padding: 0.2ex 1ex;
-	border-radius: 15px;
-	color: white;
+	min-width: 1.5ex;
+	max-width: 1.5ex;
+	min-height: 1.5ex;
+	max-height: 1.5ex;
+	border-radius: 50%;
 }
 
 .cluster_state.success {
@@ -29,6 +36,9 @@ nav a:hover {
 	background-color: #e74c3c;
 }
 
+.cluster_state.unknown {
+	background-color: #9a9a9a;
+}
 
 * {
 	box-sizing: border-box;
