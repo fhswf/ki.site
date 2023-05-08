@@ -2,6 +2,37 @@
 @tailwind components;
 @tailwind utilities;
 
+@import url("./fonts/fonts.css");
+
+.email::before {
+	display: inline-block;
+	font-family: "Material Icons Two Tone";
+	font-feature-settings: "liga";
+	vertical-align: middle;
+	width: 1.4em;
+	content: "email";
+}
+
+.phone::before {
+	display: inline-block;
+	font-family: "Material Icons Two Tone";
+	font-feature-settings: "liga";
+	vertical-align: middle;
+	width: 1.6em;
+	content: "phone";
+}
+
+.address::before {
+	display: block;
+	float: left;
+	align-content: bottom;
+	/* margin-left: -1.4em; */
+	font-family: "Material Icons Two Tone";
+	font-feature-settings: "liga";
+	width: 1.4em;
+	padding-top: 0.1em;
+	content: "my_location";
+}
 
 nav a {
 	text-decoration: none;
