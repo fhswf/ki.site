@@ -5,7 +5,7 @@ title: Impressum
 ---
 
 # Impressum
-
+Projektleitung
 <div class="contact">
     <p>Prof. Dr. Christian Gawron</p>
     <p>Fachhochschule Südwestfalen<br>
@@ -16,6 +16,14 @@ title: Impressum
     </p>
     <p class="email"><a href="mailto:gawron.christian@fh-swf.de">gawron.christian@fh-swf.de</a></p>
     <p class="phone"><a href="tel:+492371566565">+49 2371 566 565</a></p>
+</div>
+Technischer Betrieb 
+<div class="contact">
+    <p>Max Kuhmichel</p>
+    <p>Fachhochschule Südwestfalen<br>
+      Fachbereich Informatik und Naturwissenschaften
+    </p>
+    <p class="email"><a href="mailto:kuhmichel.max@fh-swf.de">kuhmichel.max@fh-swf.de</a></p>
 </div>
 
 ## Nutzungsbedingungen
