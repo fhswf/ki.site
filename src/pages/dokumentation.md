@@ -4,12 +4,12 @@ key: dokumentation
 title: Dokumentation KI-Cluster
 ---
 
-# JupyterHub
-[JupyterHub](https://www.ki.fh-swf.de/jupyterhub)
+# [JupyterHub](https://www.ki.fh-swf.de/jupyterhub)
 
 ## Anmeldung 
 
 **Mit FH-Kennung**
+
 Wählen Sie die derzeit einzige Option zur Anmeldung auf der JupyterHub Seite aus und Sie werden an den Keycloak Service des Clusters weitergeleitet.
 
 Wählen Sie "SSO Login mit FH Kennung" aus und Sie werden an den Login Service der IT-Services weitergeleitet. Im Fall der ersten Anmeldung über diesen Dienst werden Sie nach der Anmeldung einmalig gefragt, ob Sie der Datenweiterleitung zustimmen. Dies müssen Sie bestätigen. Die einzigen Daten, die wir von IT-Servies erhalten, sind Ihre FH Kennung, sowie E-Mail Addresse und Name. Diese geben wir natürlich nicht an Dritte weiter. 
