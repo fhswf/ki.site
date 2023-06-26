@@ -6,7 +6,7 @@ title: KI-Cluster der FH Südwestfalen
 
 Willkommen auf dem Cluster für KI und Data Science der FH Südwestfalen.
 
-## Infrastruktur
+### Infrastruktur
 
 Der Cluster bietet aktuell folgende Infrastruktur:
 - 2 GPU-Server mit je 4 GPUs (NVIDIA A100 SMX, 80GB HBM2)
@@ -37,7 +37,7 @@ Wenn Sie eine eigene, angepasste Umgebungen benötigen, können Sie unter [githu
 
 ## Betrieb und Entwicklung
 
-Für Feedback und Issues rund um den Cluster existiert ein weiters (internes) Repository unter [github.com/fhswf/kicluster-deployments](https://github.com/fhswf/kicluster-deployments/issues) sowie ein [Projekt](https://github.com/orgs/fhswf/projects/6) auf Github.  
+Für Feedback und Issues rund um den Cluster existiert ein weiteres (internes) Repository unter [github.com/fhswf/kicluster-deployments](https://github.com/fhswf/kicluster-deployments/issues) sowie ein [Projekt](https://github.com/orgs/fhswf/projects/6) auf Github.  
 
 Der Cluster befindet sich aktuell noch in der Erprobungsphase. 
 
