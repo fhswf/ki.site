@@ -20,7 +20,7 @@ Als Orchestrierung Werkzeug wird Kubernetes eingesetzt.
 
 ## JupyterHub
 
-Die primäre Anwendung, die derzeit auf dem Cluster läuft, ist das [JupyterHub](https://www.ki.fh-swf.de/jupyterhub). Hier können Sie sich mit Ihren Hochschulzugangsdaten anmelden und einen Containerisiertes JupyterLab starten. Je nach Umgebung haben diese dort Zugang zu einer persistenten "ready to go" Entwicklungsumgebung. 
+Die primäre Anwendung, die derzeit auf dem Cluster läuft, ist das [JupyterHub](https://www.ki.fh-swf.de/jupyterhub). Hier können Sie sich mit Ihren Hochschulzugangsdaten anmelden und einen Containerisiertes JupyterLab starten. Je nach Umgebung haben Sie dort Zugang zu einer persistenten "ready to go" Entwicklungsumgebung. 
 
 ### Wartung
 
@@ -29,7 +29,7 @@ Stellen Sie deshalb sicher, dass Sie Ihre Daten regelmäßig speichern. Die IPyt
 
 Ein regelmäßiges Wartungsfenster existiert derzeit an jedem Dienstag zwischen 10 und 12 Uhr.
 
-### Images und Umgebungen für JupyterHub
+### Images für JupyterHub
 
 Für die Nutzung von JupyterHub wurden eigene Images erstellt, die auf den GPU-Servern und den CPU-Servern laufen und als Umgenungen den Nutzern zur Auswahl zur Verfügung stehen. Die Umgebungen sind auf die Bedürfnisse des Clusters angepasst und enthalten bereits die wichtigsten Pakete für Data Science, KI, DeepLearning und mehr. 
 
