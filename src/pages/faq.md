@@ -25,9 +25,28 @@ Ja.
 Ihre alten Daten sind in zwei read-only Verzeichnissen unter /home/old* zu finden.
 Das alte nfs shared-data Verzeichnis liegt auch dort.
 
+
+### Wie kann ich git mit ssh verwenden?
+
+Ihren Key können Sie über die JupyerLab-Oberfläche hochladen und in Ihr Home-Verzeichnis legen. 
+<br> Mit
+```bash
+ssh-add ~/.ssh/my_git_key
+```
+können Sie Ihren Key dem Dienst bekannt machen. Diesen Command müssen Sie selber ausführen, da ein Key üblicherweise Passwort geschützt ist.
+Git sollte dann wie gewohnt funktionieren, allerdings kennt der ssh Dienst nach dem Neustart der Umgebung den Key nicht mehr und muss mit dem Command erneut hinzugefügt werden. Sie können sich hierfür in Ihrer .bashrc auch ein Alias anlegen, wenn Sie den Pfad nicht jedesmal eingeben möchten:
+```bash
+echo "alias addkey='ssh-add ~/.ssh/my_git_key'" >> $HOME/.bashrc
+```
+Wenn der ssh-Dienst nicht laufen sollte, dann können Sie manuell starten und anschließend den key hinzufügen: 
+
+```
+eval `ssh-agent -s`
+```
+
 ### Warum ist mein Training so langsam?
 
 Bitte kontrollieren Sie, ob Ihr Training auf einer Grafikkarte läuft und wie derzeit die Auslastung des Systems ist.
 In der Konsole über nvidia-smi und top bzw. htop. können Sie die derzeitige Auslastung Ihrer Umgebung einsehen.
-Bendenken Sie das Sie nicht alleine auf den Knoten des Clusters arbeiten und gehen Sie verantwortungsvoll mit den verfügbaren Ressourcen um. 
+Bendenken Sie, dass Sie nicht alleine auf den Knoten des Clusters arbeiten und gehen Sie verantwortungsvoll mit den verfügbaren Ressourcen um. 
 Je nach Umgebung sind die verfügbaren Ressourcen gegebenfalls zusätzlich begrenzt. Datenvorverarbeitungsschritte sind oft ein häufiges Bottleneck und sollten vor dem Training stattfinden und nicht parallel während des Trainings. Erfahrungsgemäß verbraucht zum Beispiel der PyTorch Dataloader sehr viel Ressourcen und sollte bedacht eingesetzt werden bzw. konfiguriert werden.
