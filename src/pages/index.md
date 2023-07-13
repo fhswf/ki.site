@@ -13,7 +13,7 @@ Der Cluster bietet aktuell folgende Infrastruktur:
 - 4 CPU-Server mit je zwei AMD EPYC 7532 Prozessoren (32 Kerne, 64 Threads)
 - Hot Storage (24 x 3,84 TB NVMe SSDs)
 - Cold Storage (36 x 16 TB HDDs)
-- 100 Gbit Infiband
+- 100 Gbit Infiniband
  
 Derzeit sind alle Komponenten im Hause der Fachhochschule Südwestfahlen stationiert.
 Als Orchestrierung Werkzeug wird Kubernetes eingesetzt.
