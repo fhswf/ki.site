@@ -6,7 +6,7 @@ title: KI-Cluster der FH Südwestfalen
 
 Willkommen auf dem Cluster für KI und Data Science der FH Südwestfalen.
 
-### Infrastruktur
+## Infrastruktur
 
 Der Cluster bietet aktuell folgende Infrastruktur:
 - 2 GPU-Server mit je 4 GPUs (NVIDIA A100 SMX, 80GB HBM2)
@@ -18,13 +18,16 @@ Der Cluster bietet aktuell folgende Infrastruktur:
 Derzeit sind alle Komponenten im Hause der Fachhochschule Südwestfahlen stationiert.
 Als Orchestrierung Werkzeug wird Kubernetes eingesetzt.
 
-## JupyterHub
+### JupyterHub
 
 Die primäre Anwendung, die derzeit auf dem Cluster läuft, ist das [JupyterHub](https://www.ki.fh-swf.de/jupyterhub). Hier können Sie sich mit Ihren Hochschulzugangsdaten anmelden und einen Containerisiertes JupyterLab starten. Je nach Umgebung haben Sie dort Zugang zu einer persistenten "ready to go" Entwicklungsumgebung. 
 
-## S3 Storage
+### S3 Storage
 
-Der Cluster bietet mit `Minio` einen S3 Storage an, der über die Adresse `s3.ki.fh-swf.de` erreichbar ist. Sie können sich an der [Minio Console](https://www.ki.fh-swf.de/s3/console/login) mit Ihren Hochschulzugangsdaten anmelden und dort Buckets anlegen sowie Access Keys verwalten.
+Der Cluster bietet mit Minio einen S3 Storage an, der über die Adresse `s3.ki.fh-swf.de` erreichbar ist. Sie können sich an der [Minio Console](https://s3.ki.fh-swf.de/console/login) mit Ihren Hochschulzugangsdaten anmelden und dort Buckets anlegen sowie Access Keys verwalten.
+
+Jeder Benutzer hat dabei exklusiven Zugriff auf einen eigenen Bucket mit seinem Benutzernamen. Dieser Bucket wird allerdings nicht automatisch angelegt, Sie müssen sich einmalig an der Minio Console anmelden und den Bucket manuell anlegen.
+Wenn Ihr Benutzername beispielsweise `chgaw002` lautet, können Sie einen Bucket mit dem Namen `chgaw002` anlegen.
 
 
 ### Wartung
