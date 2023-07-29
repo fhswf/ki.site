@@ -22,6 +22,11 @@ Als Orchestrierung Werkzeug wird Kubernetes eingesetzt.
 
 Die primäre Anwendung, die derzeit auf dem Cluster läuft, ist das [JupyterHub](https://www.ki.fh-swf.de/jupyterhub). Hier können Sie sich mit Ihren Hochschulzugangsdaten anmelden und einen Containerisiertes JupyterLab starten. Je nach Umgebung haben Sie dort Zugang zu einer persistenten "ready to go" Entwicklungsumgebung. 
 
+## S3 Storage
+
+Der Cluster bietet mit `Minio` einen S3 Storage an, der über die Adresse `s3.ki.fh-swf.de` erreichbar ist. Sie können sich an der [Minio Console](https://www.ki.fh-swf.de/s3/console/login) mit Ihren Hochschulzugangsdaten anmelden und dort Buckets anlegen sowie Access Keys verwalten.
+
+
 ### Wartung
 
 Der JupyterHub wird gelegentlich aktualisiert. Während dieser Zeit kann es sein, dass Ihr laufender Server, bzw. laufendes Image ebenfalls neugestartet wird.
