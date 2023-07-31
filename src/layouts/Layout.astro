@@ -15,7 +15,7 @@ import Header from "../components/Header.astro";
     </head>
     <body>
         <Header />
-        <main class="prose max-w">
+        <main class="prose prose-headings:mb-3 prose-headings:font-extrabold prose-h1:text-4xl prose-h2:text-2xl prose-h3:text-xl max-w">
             <slot />
         </main>
     </body>
@@ -32,4 +32,6 @@ import Header from "../components/Header.astro";
         margin-left: auto;
         margin-right: auto;
     }
+
+
 </style>
