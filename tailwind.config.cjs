@@ -6,19 +6,19 @@ module.exports = {
 		typography: {
 			default: {
 				css: {
-					'h1': {	
+					h1: {	
 						'font-size': '2.5rem',
 						'font-weight': '700',
 						'line-height': '1.2',
 						'margin-bottom': '1rem',
 					},
-					'h2': {
+					h2: {
 						'font-size': '2rem',
 						'font-weight': '700',
 						'line-height': '1.2',
 						'margin-bottom': '1rem',
 					},
-					'h3': {
+					h3: {
 						'font-size': '1.75rem',
 						'font-weight': '700',
 						'line-height': '1.2',
