@@ -6,7 +6,7 @@ title: KI-Cluster der FH Südwestfalen
 
 <div style=color:red>
 <h2 style=color:darkred>Information</h2>
-  <b>Unere Server am Wochenende des 5.8. auf Grund von Wartungsarbeiten im Serverraum nicht erreichbar!</b>
+  <b>Unsere Server sind am Wochenende um den 5.8. auf Grund von Wartungsarbeiten der Stromversorgung vorübergehend nicht erreichbar!</b>
 </div>
 
 Willkommen auf dem Cluster für KI und Data Science der FH Südwestfalen.
