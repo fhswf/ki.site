@@ -4,11 +4,6 @@ title: KI-Cluster der FH Südwestfalen
 ---
 # Cluster für KI und  Data Science der Fachhochschule Südwestfalen 
 
-<div style=color:red>
-<h2 style=color:darkred>Information</h2>
-  <b>Unsere Server sind am Wochenende um den 5.8. auf Grund von Wartungsarbeiten der Stromversorgung vorübergehend nicht erreichbar!</b>
-</div>
-
 Willkommen auf dem Cluster für KI und Data Science der FH Südwestfalen.
 
 ## Infrastruktur
