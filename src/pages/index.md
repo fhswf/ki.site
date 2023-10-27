@@ -35,7 +35,7 @@ Wenn Ihr Benutzername beispielsweise `chgaw002` lautet, können Sie einen Bucket
 Der JupyterHub wird gelegentlich aktualisiert. Während dieser Zeit kann es sein, dass Ihr laufender Server, bzw. laufendes Image ebenfalls neugestartet wird.
 Stellen Sie deshalb sicher, dass Sie Ihre Daten regelmäßig speichern. Die IPython-Notebooks sollten automatisch gesichert werden.
 
-Ein regelmäßiges Wartungsfenster existiert derzeit an jedem Dienstag zwischen 10 und 12 Uhr.
+Ein regelmäßiges Wartungsfenster existiert derzeit an jedem Dienstag zwischen 14 und 17 Uhr.
 
 ### Images für JupyterHub
 
