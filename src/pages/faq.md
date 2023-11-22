@@ -79,3 +79,18 @@ Prinzipiell nein. Erfahrene Anwender können sich allerdings dennoch eigene Umge
 </br>
 Wenn Sie die Basisinstallation der Umgebung in Ihrer eigenen venv mit verwenden möchten, dann müssen Sie bei der Erzeugung der venv das Flag `--site-packages` verwenden.
 </br>
+
+### Wie wechsel ich die GPU?
+Wenn Sie eine dedizierte GPU auswählen, dann müssen Sie für die Auswahl einer anderen Ihre Umgebung einmal schließen und neustarten. Gehen Sie dafür unter dem Reiter `File` oben Links auf das `Hub Control Pannel` und stoppen Sie dort Ihre Umgebung.
+</br>
+Wenn Sie auf den den gemeinsam genutzten Grafikkarten sind, dann haben Sie ohne einen Neustart in Ihrer Umgebung die Möglichkeit zwischen den GPU auf den Knoten zu wechesln, indem Sie in Ihrem Python Notebook über die Umgebungsvariable `CUDA_VISIBLE_DEVICES` eine (oder auch mehrere) GPUs sichtbar zu schalten. Weisen Sie dazu einen Index zwischen 0 und 3 der Variablen zu. Dieser Index entspricht der Reienfolge der Grafikkarten wie diese auch von `nvidia-smi` angezeigt werden.
+Hier ein Python Beipiel:
+```Python
+import os
+os.environ["CUDA_VISIBLE_DEVICES"] = "0" # wählt GPU 3 aus 
+```
+</br>
+Beim Start der DeepLearning-Umgebung wird die GPU ausgewählt, welche am meisten VRAM frei hat. Um diesen Prozess auch ohne Nuestart zu wiederholen können Sie ein Terminal öffnen und folgenden Befehl ausführen:
+```bash
+source /usr/local/bin/before-notebook.d/80_configure_cuda.sh
+```
