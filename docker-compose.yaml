@@ -8,7 +8,10 @@ services:
       - traefik.http.routers.ki-site.rule=Host(`www.ki.fh-swf.de`)
       - traefik.http.routers.ki-site-tls.rule=Host(`www.ki.fh-swf.de`)
       - traefik.http.routers.ki-site-tls.tls=true
-
+      - traefik.http.routers.ki-site.middlewares=ki-site-redirect-web-secure
+      - traefik.http.middlewares.ki-site-redirect-web-secure.redirectscheme.scheme=https
+ 
+ 
     networks:
       - traefik_default
 
