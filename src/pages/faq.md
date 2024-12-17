@@ -96,9 +96,6 @@ Beim Start der DeepLearning-Umgebung wird die GPU ausgewählt, welche am meisten
 source /usr/local/bin/before-notebook.d/80_configure_cuda.sh
 ```
 
-
-### Wie kann ich mein Training weiterlaufen lassen wenn ich offline bin?
-
 ### Wie kann ich mein Training weiterlaufen lassen wenn ich offline bin?
 
 Die Umgebungen werden nach etwa 1 bis 2 Stunden inaktivität automatisch von einem Culler geschlossen. Leider kann dieser aktuell nicht individuell konfiguriert werden.
