@@ -90,7 +90,28 @@ import os
 os.environ["CUDA_VISIBLE_DEVICES"] = "0" # wählt GPU 3 aus 
 ```
 </br>
+
 Beim Start der DeepLearning-Umgebung wird die GPU ausgewählt, welche am meisten VRAM frei hat. Um diesen Prozess auch ohne Nuestart zu wiederholen können Sie ein Terminal öffnen und folgenden Befehl ausführen:
 ```bash
 source /usr/local/bin/before-notebook.d/80_configure_cuda.sh
 ```
+
+### Wie kann ich mein Training weiterlaufen lassen wenn ich offline bin?
+
+Die Umgebungen werden nach etwa 1 bis 2 Stunden inaktivität automatisch von einem Culler geschlossen. Leider kann dieser aktuell nicht individuell konfiguriert werden.
+Inaktivität wird anhand des aktuell aktiven Pythonkernels bestimmt, den Sie unten in der Statusleiste sehen. So lange dieser "busy" ist, bleibt Ihre Umgebung aktiv.
+Trainings mit Torch oder Tensorflow arbeiten unter der Haube mit C++ und es kann vorkommen, dass der Kernel daher trotz laufendem Training als inaktiv gilt.
+</br>
+Als Notlösung können Sie, nachdem Sie Ihr Script gestartet haben, einen weiteren Tab im JupyterLab öffnen und in einem neuen Notebook eine Endlosschleife mit sleep laufen lassen.
+So bleibt immer ein Kernel aktiv. Dann können Sie den Browser schließen und Ihre Umgebung sollte online bleiben. Bitte achten Sie darauf hierbei keine Unnötigen Lasten zu erzeugen und beenden Sie Ihre Umgebung nach dem Training manuell über das Hub Control Panel oben links im JupyterLab! 
+
+```python
+from time import sleep
+from tqdm import tqdm
+from itertools import count
+
+# endless loop with progress bar
+for i in tqdm(count()):
+    sleep(2)
+```
+
