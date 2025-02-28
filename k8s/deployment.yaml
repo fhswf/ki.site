@@ -1,0 +1,43 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: ki-site
+  namespace: ki-site
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: ki-site
+  template:
+    metadata:
+      labels:
+        app: ki-site
+    spec:
+      automountServiceAccountToken: false
+      containers:
+      - name: ki-site
+        image: ghcr.io/fhswf/ki-site:0.0.1
+        imagePullPolicy: Always
+        ports:
+        - containerPort: 80
+        resources:
+          limits:
+            memory: "256Mi"
+            cpu: "500m"
+          requests:
+            memory: "64Mi"
+            cpu: "250m"
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: ki-site-service
+  namespace: ki-site
+spec:
+  selector:
+    app: ki-site
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 80
+  type: ClusterIP
