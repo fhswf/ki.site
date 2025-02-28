@@ -7,7 +7,8 @@ metadata:
   annotations:
     traefik.frontend.passHostHeader: 'true'
     traefik.ingress.kubernetes.io/router.entrypoints: websecure
-    traefik.ingress.kubernetes.io/router.tls.certresolver: myresolver
+    traefik.ingress.kubernetes.io/router.tls.certresolver: letsencrypt
+    traefik.ingress.kubernetes.io/router.tls: 'true'
 spec:
   rules:
   - host: ki.fh-swf.cloud
