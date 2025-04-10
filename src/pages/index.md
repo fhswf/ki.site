@@ -18,6 +18,12 @@ Der Cluster bietet aktuell folgende Infrastruktur:
 Derzeit sind alle Komponenten im Hause der Fachhochschule Südwestfahlen stationiert.
 Als Orchestrierung Werkzeug wird Kubernetes eingesetzt.
 
+### K!mpuls Chatbot
+
+Diese Anwendung bietet eine benutzerfreundliche Oberfläche für die Nutzung der OpenAI-Chat-API. Sie ermöglicht es, mit verschiedenen Sprachmodellen zu interagieren, Werkzeuge zu konfigurieren und Chat-Verläufe zu verwalten. Die Anwendung ist datenschutzfreundlich und unterstützt die Anpassung an individuelle Bedürfnisse.
+
+Der Chatbot ist unter der Adresse [openai.ki.fh-swf.de](https://openai.ki.fh-swf.de) erreichbar. Sie können sich dort mit Ihren Hochschulzugangsdaten anmelden und den Chatbot nutzen.
+
 ### JupyterHub
 
 Die primäre Anwendung, die derzeit auf dem Cluster läuft, ist das [JupyterHub](https://www.ki.fh-swf.de/jupyterhub). Hier können Sie sich mit Ihren Hochschulzugangsdaten anmelden und einen Containerisiertes JupyterLab starten. Je nach Umgebung haben Sie dort Zugang zu einer persistenten "ready to go" Entwicklungsumgebung. 
