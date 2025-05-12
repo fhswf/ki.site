@@ -20,6 +20,11 @@ spec:
         imagePullPolicy: Always
         ports:
         - containerPort: 80
+        env:
+        - name: PUBLIC_RELEASE
+          value: 0.0.0
+        - name: PUBLIC_BUILD_SHA
+          value: 0d86c8e77f3a9dc5d74d179692379616025bea18
         resources:
           limits:
             memory: "256Mi"

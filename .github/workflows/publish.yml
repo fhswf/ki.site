@@ -1,15 +1,131 @@
+name: Release
+
 on:
   push:
     branches:
-      - main
-jobs:
-  docker:
-    timeout-minutes: 10
-    runs-on: self-hosted
+      - "main"
+  milestone:
+    types:
+      - closed
+  workflow_dispatch:
 
+jobs:
+  release:
+    # Only release on push to master
+    if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write # to be able to publish a GitHub release
+      issues: write # to be able to comment on released issues
+      pull-requests: write # to be able to comment on released pull requests
+      id-token: write # to enable use of OIDC for npm provenance
     steps:
       - name: Checkout
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          persist-credentials: false
 
-      - name: Start containers
-        run: docker compose up -d --build
+      - name: Semantic Release
+        id: semantic_release
+        uses: cycjimmy/semantic-release-action@v4
+        env:
+          GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
+
+        with:
+          branches: |
+            [
+              '+([0-9])?(.{+([0-9]),x}).x',
+              'main',
+              'next',
+              'next-major',
+              {
+                name: 'beta',
+                prerelease: true
+              },
+              {
+                name: 'alpha',
+                prerelease: true
+              }
+            ]
+          extra_plugins: |
+            @semantic-release/commit-analyzer
+            @semantic-release/release-notes-generator
+            @semantic-release/github
+            @semantic-release/git
+            semantic-release-replace-plugin
+
+      - name: Set default (old) release version
+        run: echo "release_version=${{ steps.semantic_release.outputs.last_release_version }}" >> $GITHUB_OUTPUT
+      - name: Set new release version
+        run: echo "release_version=${{ steps.semantic_release.outputs.new_release_version }}" >> $GITHUB_OUTPUT
+        if: steps.semantic_release.outputs.new_release_published == 'true'
+
+    outputs:
+      new_release_published: ${{ steps.semantic_release.outputs.new_release_published }}
+      new_release_version: ${{ steps.semantic_release.outputs.new_release_version }}
+      last_release_version: ${{ steps.semantic_release.outputs.last_release_version }}
+
+  build:
+    needs: release
+    runs-on: ubuntu-latest
+    if: needs.release.outputs.new_release_published == 'true'
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          persist-credentials: false
+
+      - name: Docker meta
+        id: meta
+        uses: docker/metadata-action@v5
+        with:
+          # list of Docker images to use as base name for tags
+          images: |
+            ghcr.io/fhswf/ki.site
+          # generate Docker tags based on the following events/attributes
+          tags: |
+            type=sha,prefix=sha-,format=short,enable=true,priority=1100
+            type=schedule
+            type=ref,event=branch
+            type=ref,event=pr
+            type=semver,pattern={{version}},value=${{ needs.release.outputs.new_release_version }}
+            type=semver,pattern={{major}}.{{minor}},value=${{ needs.release.outputs.new_release_version }}
+            type=semver,pattern={{major}},value=${{ needs.release.outputs.new_release_version }}
+            type=raw,value=${{ needs.release.outputs.new_release_version }}
+            type=raw,value=latest
+
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v3
+      #- name: Login to GitHub Container Registry
+      #  uses: docker/login-action@v3
+      #  with:
+      #    registry: ghcr.io
+      #    username: ${{ github.actor }}
+      #    password: ${{ secrets.GH_TOKEN }}
+      - name: Build and push Docker image
+        uses: docker/build-push-action@v5
+        with:
+          context: .
+          file: ./Dockerfile
+          push: true
+          tags: ${{ steps.meta.outputs.tags }}
+          labels: ${{ steps.meta.outputs.labels }}
+          build-args: |
+            VERSION=${{ needs.release.outputs.new_release_version }}
+            BUILD_SHA=${{ github.sha }}
+
+      - name: Update yaml
+        uses: fjogeleit/yaml-update-action@main
+        with:
+          # token: ${{ secrets.GH_TOKEN }}
+          changes: |
+            {
+              "k8s/deployment.yaml": {
+                "spec.template.spec.containers[0].image": "ghcr.io/fhswf/ki.site:${{ needs.release.outputs.new_release_version }}",
+                "spec.template.spec.containers[0].env[0].value": "${{ needs.release.outputs.new_release_version }}",
+                "spec.template.spec.containers[0].env[1].value": "${{ github.sha }}"
+              }
+            }
+          branch: main
+          message: "Update image to ${{ needs.release.outputs.new_release_version }} [skip ci]"
