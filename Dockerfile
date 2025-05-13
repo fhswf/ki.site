@@ -1,4 +1,11 @@
-FROM node:19-alpine AS build
+FROM node:22-alpine AS build
+
+ARG VERSION
+ARG BUILD_SHA
+
+ENV PUBLIC_VERSION=$VERSION
+ENV PUBLIC_BUILD_SHA=$BUILD_SHA
+
 COPY . /app
 WORKDIR /app
 RUN  npm ci && npm run build

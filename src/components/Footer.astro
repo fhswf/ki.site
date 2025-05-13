@@ -1,0 +1,164 @@
+---
+import { BUILD_TIME } from "astro:env/client";
+
+const buildTime = new Date(BUILD_TIME);
+const buildTimeString = buildTime.toLocaleString("de-DE", {
+    timeZone: "Europe/Berlin",
+    dateStyle: "short",
+    timeStyle: "short",
+});
+const buildTimeStringShort = buildTime.toLocaleString("de-DE", {
+    timeZone: "Europe/Berlin",
+    dateStyle: "short",
+});
+console.log("build_time: ", BUILD_TIME, buildTimeString);
+
+const release = import.meta.env.PUBLIC_VERSION;
+const release_url = "https://github.com/fhswf/ki.site/releases/tag/" + release;
+---
+
+<footer class="not-prose">
+    <div class="block">
+        <div>
+            <a href="/impressum">Impressum &amp; Datenschutz</a>
+        </div>
+        <div>
+            <a href={release_url}>Version {release}</a> vom <time
+                >{buildTimeString}</time
+            >
+        </div>
+    </div>
+</footer>
+
+<style lang="scss">
+    @font-face {
+        font-family: "Material Icons Two Tone";
+        font-style: normal;
+        font-weight: 400;
+        src: url("/fonts/material-twotone.woff2") format("woff2");
+    }
+
+    .material-icons-two-tone {
+        font-family: "Material Icons Two Tone";
+        font-weight: normal;
+        font-style: normal;
+        font-size: 24px;
+        line-height: 1;
+        letter-spacing: normal;
+        text-transform: none;
+        display: inline-block;
+        white-space: nowrap;
+        word-wrap: normal;
+        direction: ltr;
+        -webkit-font-feature-settings: "liga";
+        -webkit-font-smoothing: antialiased;
+    }
+
+    .block {
+        flex: 1 0;
+        flex-basis: 50ch;
+        padding-top: 1em;
+
+        div {
+            margin-bottom: 0.3em;
+        }
+    }
+
+    footer {
+        background-color: var(--theme-bg);
+        box-shadow: 2px 2px 2rem rgba(200, 200, 200, 1);
+        min-height: var(--theme-footer-height);
+
+        overflow: hidden;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        width: 100%;
+        padding-left: var(--min-spacing-inline);
+        padding-right: var(--min-spacing-inline);
+        position: relative;
+    }
+
+    h2,
+    h2 a {
+        font-size: 1.5rem;
+        font-weight: 500;
+        margin-bottom: 0.5rem;
+        margin-block-start: 0.2em;
+        margin-block-end: 0.8em;
+    }
+
+    a {
+        font-size: 1rem;
+        margin-bottom: 0.5rem;
+        text-decoration: none;
+        font-weight: 450;
+        padding-left: 4px;
+        padding-right: 4px;
+    }
+
+    ul.links {
+        margin-inline-start: 0em;
+        padding-inline-start: 0em;
+        a {
+            color: var(--theme-accent);
+            font-size: 24px;
+        }
+    }
+
+    .contact p {
+        margin-block-start: 0.2em;
+        margin-block-end: 0.2em;
+    }
+
+    .email::before {
+        display: inline-block;
+        font-family: "Material Icons Two Tone";
+        font-feature-settings: "liga";
+        vertical-align: middle;
+        width: 1.4em;
+        content: "email";
+    }
+
+    .calendar::before {
+        display: inline-block;
+        font-family: "Material Icons Two Tone";
+        font-feature-settings: "liga";
+        vertical-align: middle;
+        width: 1.4em;
+        content: "calendar_today";
+    }
+
+    .phone::before {
+        display: inline-block;
+        font-family: "Material Icons Two Tone";
+        font-feature-settings: "liga";
+        vertical-align: middle;
+        width: 1.6em;
+        content: "phone";
+    }
+
+    .address::before {
+        display: block;
+        float: left;
+        align-content: bottom;
+        /*margin-left: -1.4em;*/
+        font-family: "Material Icons Two Tone";
+        font-feature-settings: "liga";
+        width: 1.4em;
+        padding-top: 0.1em;
+        content: "my_location";
+    }
+
+    a:hover {
+        text-decoration: none;
+        color: var(--theme-accent-secondary);
+    }
+
+    li {
+        line-height: 24px;
+        padding-right: 0.5em;
+        display: inline-block;
+        vertical-align: middle;
+    }
+</style>
