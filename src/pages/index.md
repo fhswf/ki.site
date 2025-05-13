@@ -15,8 +15,8 @@ Der Cluster bietet aktuell folgende Infrastruktur:
 - Cold Storage (36 x 16 TB HDDs)
 - 100 Gbit Infiniband
  
-Derzeit sind alle Komponenten im Hause der Fachhochschule Südwestfahlen stationiert.
-Als Orchestrierung Werkzeug wird Kubernetes eingesetzt.
+Derzeit werden alle Komponenten vom Fachbereich Informatik & Naturwissenschaften gehostet und betreut.
+Als Orchestrierungswerkzeug wird Kubernetes eingesetzt.
 
 ### K!mpuls Chatbot
 

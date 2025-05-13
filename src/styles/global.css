@@ -1,0 +1,6 @@
+@import "tailwindcss";
+
+main ul {
+    list-style: square;
+    margin: 0.5ex 1.5rem;
+}

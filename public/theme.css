@@ -107,7 +107,7 @@
 :root {
     color-scheme: light;
     --theme-accent: hsla(var(--color-orange), 1);
-    --theme-accent-secondary: hsl(324, 75%, 38%);
+    --theme-accent-secondary: hsl(320, 50%, 35%);
     --theme-dim: hsla(var(--color-gray-70), 1);
     --theme-dim-light: hsla(var(--color-gray-80), 1);
     --theme-dim-lighter: hsla(var(--color-gray-90), 1);

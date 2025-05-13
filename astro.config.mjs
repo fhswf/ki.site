@@ -1,8 +1,8 @@
 import { defineConfig, envField } from 'astro/config';
 import preact from '@astrojs/preact';
 
-// https://astro.build/config
-import tailwind from "@astrojs/tailwind";
+
+import tailwindcss from "@tailwindcss/vite";
 
 // https://astro.build/config
 export default defineConfig({
@@ -11,5 +11,10 @@ export default defineConfig({
       BUILD_TIME: envField.number({ context: "client", access: "public", default: Date.now() }),
     }
   },
-  integrations: [tailwind(), preact()]
+
+  integrations: [preact()],
+
+  vite: {
+    plugins: [tailwindcss()]
+  }
 });
