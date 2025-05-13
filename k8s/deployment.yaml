@@ -15,20 +15,20 @@ spec:
     spec:
       automountServiceAccountToken: false
       containers:
-      - name: ki-site
-        image: ghcr.io/fhswf/ki.site:1.0.0
-        imagePullPolicy: Always
-        ports:
-        - containerPort: 80
-        env:
-        - name: PUBLIC_RELEASE
-          value: 1.0.0
-        - name: PUBLIC_BUILD_SHA
-          value: 0d86c8e77f3a9dc5d74d179692379616025bea18
-        resources:
-          limits:
-            memory: "256Mi"
-            cpu: "500m"
-          requests:
-            memory: "64Mi"
-            cpu: "250m"
+        - name: ki-site
+          image: ghcr.io/fhswf/ki.site:1.0.2
+          imagePullPolicy: Always
+          ports:
+            - containerPort: 80
+          env:
+            - name: PUBLIC_RELEASE
+              value: 1.0.2
+            - name: PUBLIC_BUILD_SHA
+              value: 625000155b069b9f7f7a62186fe60fd2213c9b13
+          resources:
+            limits:
+              memory: 256Mi
+              cpu: 500m
+            requests:
+              memory: 64Mi
+              cpu: 250m
