@@ -14,7 +14,7 @@
     "@astrojs/preact": "^4.0.9",
     "@astrojs/ts-plugin": "^1.1.0",
     "@tailwindcss/vite": "^4.1.6",
-    "astro": "^5.7.12",
+    "astro": "^5.13.3",
     "preact": "^10.16.0",
     "sass": "^1.69.5",
     "tailwindcss": "^4.1.6"
