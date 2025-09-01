@@ -85,7 +85,7 @@ Wenn Sie eine dedizierte GPU auswählen, dann müssen Sie für die Auswahl einer
 </br>
 Wenn Sie auf den den gemeinsam genutzten Grafikkarten sind, dann haben Sie ohne einen Neustart in Ihrer Umgebung die Möglichkeit zwischen den GPU auf den Knoten zu wechesln, indem Sie in Ihrem Python Notebook über die Umgebungsvariable `CUDA_VISIBLE_DEVICES` eine (oder auch mehrere) GPUs sichtbar zu schalten. Weisen Sie dazu einen Index zwischen 0 und 3 der Variablen zu. Dieser Index entspricht der Reienfolge der Grafikkarten wie diese auch von `nvidia-smi` angezeigt werden.
 Hier ein Python Beipiel:
-```Python
+```python
 import os
 os.environ["CUDA_VISIBLE_DEVICES"] = "0" # wählt GPU 3 aus 
 ```
