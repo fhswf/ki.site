@@ -17,6 +17,6 @@
     "astro": "^5.7.12",
     "preact": "^10.16.0",
     "sass": "^1.69.5",
-    "tailwindcss": "^4.1.6"
+    "tailwindcss": "^4.1.14"
   }
 }
