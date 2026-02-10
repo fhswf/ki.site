@@ -16,15 +16,15 @@ spec:
       automountServiceAccountToken: false
       containers:
         - name: ki-site
-          image: ghcr.io/fhswf/ki.site:1.2.4
+          image: ghcr.io/fhswf/ki.site:1.3.0
           imagePullPolicy: Always
           ports:
             - containerPort: 80
           env:
             - name: PUBLIC_RELEASE
-              value: 1.2.4
+              value: 1.3.0
             - name: PUBLIC_BUILD_SHA
-              value: b90aaccf0bd234d0fbf7da5261f08e797ed97b30
+              value: f861b17fb81f5191f28b807a21e66f049131d3b7
           resources:
             limits:
               memory: 256Mi
