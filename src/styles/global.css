@@ -4,3 +4,28 @@ main ul {
     list-style: square;
     margin: 0.5ex 1.5rem;
 }
+
+main ol {
+    list-style: none;
+    counter-reset: item;
+    margin: 0.5ex 1.5rem;
+    padding-left: 0;
+}
+
+main ol>li {
+    counter-increment: item;
+    display: flex;
+    align-items: baseline;
+    margin-bottom: 0.25em;
+}
+
+main ol>li::before {
+    content: counter(item) ".";
+    /* Increase spacing here */
+    padding-right: 0.6em;
+    /* This is the key change */
+    /* Ensure the number maintains width/alignment */
+    flex-shrink: 0;
+    /* Optional: right-align the numbers if preferred, usually for >9 */
+    /* text-align: right; width: 1.5em; */
+}
