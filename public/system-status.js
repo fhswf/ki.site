@@ -4,6 +4,8 @@ const statusLabels = {
     outage: "gestört",
     unknown: "Status unbekannt",
 };
+const refreshIntervalMs = 5 * 60 * 1000;
+let isLoadingStatus = false;
 
 const getLatestResult = (endpoint) =>
     Array.isArray(endpoint.results) && endpoint.results.length > 0
@@ -77,6 +79,12 @@ const setServiceStatus = (service, state) => {
 };
 
 const loadSystemStatus = async () => {
+    if (isLoadingStatus) {
+        return;
+    }
+
+    isLoadingStatus = true;
+
     const services = document.querySelectorAll("[data-status-group]");
 
     try {
@@ -105,7 +113,10 @@ const loadSystemStatus = async () => {
         });
     } catch {
         services.forEach((service) => setServiceStatus(service, "degraded"));
+    } finally {
+        isLoadingStatus = false;
     }
 };
 
 loadSystemStatus();
+setInterval(loadSystemStatus, refreshIntervalMs);
