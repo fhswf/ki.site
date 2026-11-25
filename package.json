@@ -16,7 +16,7 @@
     "@tailwindcss/vite": "^4.3.5",
     "astro": "^7.4.13",
     "preact": "^11.2.0",
-    "sass": "^1.69.5",
+    "sass": "^1.108.2",
     "tailwindcss": "^4.3.5"
   }
 }
